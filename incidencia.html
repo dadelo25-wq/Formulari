@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envia la teva incidència | De la Rosa Manteniment</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="top-nav">
+        <div class="header-top">
+            <div class="logo-container">
+                <div class="dr-monogram">DR</div>
+                <div style="font-weight: 700; letter-spacing: 0.1em; font-size: 1.3rem;">DE LA ROSA</div>
+            </div>
+            <div class="corporate-info">
+                <p><b>Adreça:</b> Av. de la Tecnologia, 128, 08005 Barcelona</p>
+                <p><b>NIF:</b> B-12345678 | <b>Tel:</b> +34 93 456 78 90</p>
+                <p><b>Email:</b> info@delarosa-manteniment.cat</p>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Inici</a></li>
+                <li><a href="tarifes.html">Tarifes</a></li>
+                <li><a href="quisom.html">Qui som</a></li>
+                <li><a href="contacte.html">Contacte</a></li>
+                <li><a href="incidencia.html" class="active">Envia la teva incidència</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <article class="incident-card">
+            <div class="section-title">
+                <h2>Envia la teva incidència</h2>
+                <p style="color: var(--text-muted); margin-top: 1rem;">Protocol de suport tècnic avançat</p>
+            </div>
+
+            <form id="ticket-form">
+                <div class="form-grid">
+                    <!-- Dades del Client -->
+                    <div class="form-section-label">Dades del Client</div>
+                    <div class="field-group">
+                        <label for="client-name">Nom complet</label>
+                        <input type="text" id="client-name" name="name" placeholder="P. ex: Joan Garcia" required>
+                    </div>
+                    <div class="field-group">
+                        <label for="client-email">Correu electrònic</label>
+                        <input type="email" id="client-email" name="email" placeholder="correu@empresa.com" required>
+                    </div>
+                    <div class="field-group full-width">
+                        <label for="client-phone">Telèfon de contacte</label>
+                        <input type="tel" id="client-phone" name="phone" placeholder="+34 600 000 000" required>
+                    </div>
+
+                    <!-- Identificació de l'Equip -->
+                    <div class="form-section-label">Identificació de l'Equip</div>
+                    <div class="field-group">
+                        <label for="brand-model">Marca / Model</label>
+                        <input type="text" id="brand-model" name="brand" placeholder="P. ex: Dell XPS 15 / HP ProLiant"
+                            required>
+                    </div>
+                    <div class="field-group">
+                        <label for="os">Sistema Operatiu</label>
+                        <select id="os" name="os">
+                            <option value="windows">Windows 10/11</option>
+                            <option value="linux">Linux (Ubuntu/Debian/CentOS)</option>
+                            <option value="macos">macOS</option>
+                            <option value="server">Windows Server</option>
+                        </select>
+                    </div>
+                    <div class="field-group full-width">
+                        <label for="type">Tipus d'equip</label>
+                        <select id="type" name="type">
+                            <option value="sobretaula">Sobretaula</option>
+                            <option value="portatil">Portàtil</option>
+                            <option value="servidor">Servidor</option>
+                        </select>
+                    </div>
+
+                    <!-- Llistat de Components -->
+                    <div class="form-section-label">Components Afectats</div>
+                    <div class="field-group full-width">
+                        <div class="checkbox-grid">
+                            <label class="custom-cb">
+                                <input type="checkbox" name="comp" value="disc">
+                                <div class="box"></div>
+                                <span>Disc dur (HDD/SSD)</span>
+                            </label>
+                            <label class="custom-cb">
+                                <input type="checkbox" name="comp" value="ram">
+                                <div class="box"></div>
+                                <span>Memòria RAM</span>
+                            </label>
+                            <label class="custom-cb">
+                                <input type="checkbox" name="comp" value="cpu">
+                                <div class="box"></div>
+                                <span>Processador (CPU)</span>
+                            </label>
+                            <label class="custom-cb">
+                                <input type="checkbox" name="comp" value="gpu">
+                                <div class="box"></div>
+                                <span>Placa Base / GPU</span>
+                            </label>
+                            <label class="custom-cb">
+                                <input type="checkbox" name="comp" value="font">
+                                <div class="box"></div>
+                                <span>Font d'alimentació</span>
+                            </label>
+                            <label class="custom-cb">
+                                <input type="checkbox" name="comp" value="periferics">
+                                <div class="box"></div>
+                                <span>Perifèrics / Pantalla</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Descripció de l'Avaria -->
+                    <div class="form-section-label">Descripció de l'Avaria</div>
+                    <div class="field-group full-width">
+                        <label for="symptoms">Símptomes (Què fa l'equip?)</label>
+                        <textarea id="symptoms" name="symptoms" rows="3"
+                            placeholder="Descripció visual del problema..."></textarea>
+                    </div>
+                    <div class="field-group">
+                        <label for="beeps">Senyals acústics (beeps) / Missatges d'error</label>
+                        <input type="text" id="beeps" name="beeps" placeholder="P. ex: 3 beeps curts o Error 0x00021">
+                    </div>
+                    <div class="field-group">
+                        <label for="last-action">Darrera acció realitzada</label>
+                        <input type="text" id="last-action" name="last_action"
+                            placeholder="P. ex: Instal·lació de driver">
+                    </div>
+
+                    <!-- Urgència -->
+                    <div class="form-section-label">Nivell d'Urgència</div>
+                    <div class="field-group full-width">
+                        <select id="urgency" name="urgency">
+                            <option value="baixa">Baixa - Manteniment preventiu</option>
+                            <option value="mitjana">Mitjana - Operativitat parcial</option>
+                            <option value="alta">Alta (Crítica) - Aturada de servei</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn" style="width: 100%; margin-top: 3rem;">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Enviar Informe d'Incidència
+                </button>
+            </form>
+        </article>
+    </div>
+
+    <footer>
+        <div class="footer-col">
+            <h4>Xarxes Socials</h4>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4>Legalitat</h4>
+            <ul class="footer-links">
+                <li><a href="#">Política de Privacitat</a></li>
+                <li><a href="#">Avís Legal</a></li>
+                <li><a href="#">Cookies</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Atenció al Client</h4>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.5rem;">
+                <i class="fa-solid fa-clock" style="color: var(--accent-lime); margin-right: 0.5rem;"></i>
+                Dilluns a Divendres: 08:00 - 19:00
+            </p>
+            <p style="color: var(--text-muted); font-size: 0.85rem;">
+                <i class="fa-solid fa-headset" style="color: var(--accent-lime); margin-right: 0.5rem;"></i>
+                Suport 24/7 per a Premium
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('ticket-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Enviant...';
+            btn.style.opacity = '0.7';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> Incidència Enviada Correctament';
+                btn.style.background = 'linear-gradient(135deg, #059669, #047857)';
+                setTimeout(() => { location.reload(); }, 2500);
+            }, 1500);
+        });
+    </script>
+</body>
+
+</html>
